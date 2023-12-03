@@ -48,13 +48,6 @@ function NewGitRepository() {
     _addRemoteGitRepositoryURL
 }
 
-# GitRepositoryIsNotExists проверяет отсутствует ли git репозиторий в текущей папке
-function GitRepositoryIsNotExists() {
-    if [[ ! -d ".git" ]]; then
-        exit 1
-    fi
-}
-
 # ShowGitChangedFiles показывает список изменённых файлов
 function ShowGitChangedFiles() {
     echo "Git: Список изменений"

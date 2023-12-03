@@ -17,7 +17,7 @@ else
 fi
 
 # проверить иницализирован ли git репозиторий в этом хранилище
-if GitRepositoryIsNotExists; then
+if [[ ! -d ".git" ]]; then
 	Debugln "Отсутствует git репозиторий"
 	NewGitRepository
 fi
