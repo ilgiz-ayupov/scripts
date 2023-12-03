@@ -25,11 +25,11 @@ fi
 # загрузить последние изменения с сервера
 GitPull "main"
 
-# вывести список изменений
-ShowGitChangedFiles
-
 # создать новый коммит
-GitAddAllAndCreateCommit "$COMMIT_MESSAGE"
+if GitAddAllAndCreateCommit "$COMMIT_MESSAGE"; then
+	# вывести список изменений
+	ShowGitChangedFiles
+fi
 
 # отправить новый коммит на сервер
 if ! GitPush "main"; then
